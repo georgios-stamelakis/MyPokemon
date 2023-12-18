@@ -41,7 +41,7 @@ struct MainTabView: View {
                 }
             }
             .padding()
-            .background(Color.blue)
+            .background(Color.black)
             .foregroundColor(.white)
 
             // Tab View
@@ -76,7 +76,7 @@ struct LocationView: View {
     var body: some View {
         // Replace with your location view content
         Text("Location View")
-            .foregroundColor(.black)
+            .foregroundColor(.primary)
     }
 }
 
@@ -84,7 +84,7 @@ struct ProfileView: View {
     var body: some View {
         // Replace with your profile view content
         Text("Profile View")
-            .foregroundColor(.black)
+            .foregroundColor(.primary)
     }
 }
 

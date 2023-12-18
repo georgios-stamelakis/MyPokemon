@@ -26,7 +26,7 @@ struct ShowcaseView: View {
                 .padding()
             }
         }
-        .background(Color.white)
+        .background(.background)
         .cornerRadius(16)
         .shadow(radius: 4)
         .padding()
@@ -37,7 +37,7 @@ struct PokemonCardView: View {
     var pokemon: Pokemon
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .center, spacing: 8) {
             // Pokemon Card Content
             Text(pokemon.name.capitalized)
                 .font(.headline)
@@ -71,8 +71,8 @@ struct PokemonCardView: View {
         }
         .frame(width: 150)
         .padding()
-        .background(Color.blue)
-        .foregroundColor(.white)
+        .background(.gray)
+        .foregroundColor(.green)
         .cornerRadius(12)
     }
 }
