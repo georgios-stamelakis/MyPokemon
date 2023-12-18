@@ -7,56 +7,6 @@
 
 import SwiftUI
 
-struct Pokemon: Identifiable, Decodable {
-    let id: Int
-    let name: String
-    let sprites: Sprites
-
-    private enum CodingKeys: String, CodingKey {
-        case id, name, sprites
-    }
-}
-
-struct Sprites: Decodable {
-    let frontDefault: String
-
-    private enum CodingKeys: String, CodingKey {
-        case frontDefault = "front_default"
-    }
-}
-
-
-class PokemonViewModel: ObservableObject {
-    @Published var pokemons: [Pokemon] = []
-
-    init() {
-        fetchPopularPokemon()
-    }
-
-    func fetchPopularPokemon() {
-        guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=10") else {
-            return
-        }
-
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let data = data {
-                do {
-                    let result = try JSONDecoder().decode(PokemonListResponse.self, from: data)
-                    DispatchQueue.main.async {
-                        self.pokemons = result.results
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-        }.resume()
-    }
-}
-
-struct PokemonListResponse: Decodable {
-    let results: [Pokemon]
-}
-
 struct ShowcaseView: View {
     @ObservedObject private var viewModel = PokemonViewModel()
 
@@ -93,7 +43,7 @@ struct PokemonCardView: View {
                 .font(.headline)
                 .fontWeight(.bold)
 
-            AsyncImage(url: URL(string: pokemon.sprites.frontDefault)) { phase in
+            AsyncImage(url: URL(string: pokemon.sprite ?? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png")) { phase in
                 switch phase {
                 case .success(let image):
                     image
