@@ -42,13 +42,10 @@ class PokemonViewModel: ObservableObject {
                 if let data = data {
                     do {
                         let pokemonDetails = try JSONDecoder().decode(PokemonDetails.self, from: data)
-//                        DispatchQueue.main.async {
-//                            self.fetchPokemonSprite(pokemonDetails: pokemonDetails)
-//                        }
-
-                        let pokemon = Pokemon(id: pokemonDetails.id, name: pokemonResult.name, sprite: pokemonDetails.sprites.other?.officialArtwork?.frontDefault)
-                        self.pokemons.append(pokemon)
-
+                        DispatchQueue.main.async {
+                            let pokemon = Pokemon(id: pokemonDetails.id, name: pokemonResult.name, sprite: pokemonDetails.sprites.other?.officialArtwork?.frontDefault)
+                            self.pokemons.append(pokemon)
+                        }
                     } catch {
                         print("Error decoding Pokemon details: \(error)")
                     }
@@ -57,19 +54,4 @@ class PokemonViewModel: ObservableObject {
         }
     }
 
-//    func fetchPokemonSprite(pokemonDetails: PokemonDetails) {
-//        guard let url = URL(string: pokemonDetails.sprites.other.officialArtwork.frontDefault) else {
-//            return
-//        }
-//
-//        URLSession.shared.dataTask(with: url) { data, _, error in
-//            if let data = data {
-//                let sprite = UIImage(data: data)
-//                DispatchQueue.main.async {
-//                    let pokemon = Pokemon(name: pokemonDetails.name, sprite: sprite)
-//                    self.pokemons.append(pokemon)
-//                }
-//            }
-//        }.resume()
-//    }
 }
