@@ -69,14 +69,7 @@
 			children = (
 				0DDF465D2B2F581D00DAEDB6 /* MyPokemonApp.swift */,
 				0DDF465F2B2F581D00DAEDB6 /* MainTabView.swift */,
-				0DDF466B2B2F5D6A00DAEDB6 /* HomeView.swift */,
-				0DDF466D2B2F6F9600DAEDB6 /* FeaturedEventView.swift */,
-				0DDF466F2B2F6FBE00DAEDB6 /* WeeklyEventsView.swift */,
-				0DDF46712B2F6FD600DAEDB6 /* ShowcaseView.swift */,
-				0DDF46772B306F8300DAEDB6 /* PokemonViewModel.swift */,
-				0DDF46792B3074CB00DAEDB6 /* PokemonDetails.swift */,
-				0DDF46732B306D9100DAEDB6 /* PokemonModel.swift */,
-				0DDF46752B306E7900DAEDB6 /* PokemonList.swift */,
+				0DDF467B2B30A82900DAEDB6 /* Home */,
 				0DDF46612B2F581E00DAEDB6 /* Assets.xcassets */,
 				0DDF46632B2F581E00DAEDB6 /* Preview Content */,
 			);
@@ -89,6 +82,45 @@
 				0DDF46642B2F581E00DAEDB6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0DDF467B2B30A82900DAEDB6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0DDF467E2B30A8C000DAEDB6 /* Models */,
+				0DDF467D2B30A8A900DAEDB6 /* ViewModels */,
+				0DDF467C2B30A88E00DAEDB6 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0DDF467C2B30A88E00DAEDB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DDF466B2B2F5D6A00DAEDB6 /* HomeView.swift */,
+				0DDF466D2B2F6F9600DAEDB6 /* FeaturedEventView.swift */,
+				0DDF466F2B2F6FBE00DAEDB6 /* WeeklyEventsView.swift */,
+				0DDF46712B2F6FD600DAEDB6 /* ShowcaseView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0DDF467D2B30A8A900DAEDB6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0DDF46772B306F8300DAEDB6 /* PokemonViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0DDF467E2B30A8C000DAEDB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0DDF46792B3074CB00DAEDB6 /* PokemonDetails.swift */,
+				0DDF46732B306D9100DAEDB6 /* PokemonModel.swift */,
+				0DDF46752B306E7900DAEDB6 /* PokemonList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +344,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,6 +374,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
